@@ -21,3 +21,11 @@ Console.WriteLine($"текст:{text2}");
 Console.WriteLine($"количество символов:{text2.Length}");
 Console.WriteLine($"количество байтов UTf-8:{textBytes2.Length}");
 Console.WriteLine($"Байты:{BitConverter.ToString(textBytes2)}");
+
+string english = "A";
+string russian = "А";
+
+byte[] englishBytes = Encoding.UTF8.GetBytes(english);
+byte[] russianBytes = Encoding.UTF8.GetBytes(russian);
+Console.WriteLine($"A:{BitConverter.ToString(englishBytes)}");
+Console.WriteLine($"А:{BitConverter.ToString(russianBytes)}");
