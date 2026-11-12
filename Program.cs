@@ -29,3 +29,20 @@ byte[] englishBytes = Encoding.UTF8.GetBytes(english);
 byte[] russianBytes = Encoding.UTF8.GetBytes(russian);
 Console.WriteLine($"A:{BitConverter.ToString(englishBytes)}");
 Console.WriteLine($"А:{BitConverter.ToString(russianBytes)}");
+
+string text3 = "Привет";
+byte[] bytes = Encoding.UTF8.GetBytes(text3);
+string restored = Encoding.UTF8.GetString(bytes);
+Console.WriteLine($"Исходная строка: {text3}");
+Console.WriteLine($"Восстановленная: {restored}");
+
+int number2 = 123456789;
+byte[] bytes2 = BitConverter.GetBytes(number2);
+int restored2 = BitConverter.ToInt32(bytes2, 0);
+Console.WriteLine($"Исходное число: {number2}");
+Console.WriteLine($"Восстановление:{restored2}");
+Console.WriteLine($"Байты:{BitConverter.ToString(bytes2)}");
+
+byte[] data = { 0x41, 0x42, 0x43 };
+Console.WriteLine($"Байты: {BitConverter.ToString(data)}");
+Console.WriteLine($"Как текст UTF-8: {Encoding.UTF8.GetString(data)}");
